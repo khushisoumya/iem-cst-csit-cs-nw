@@ -1,1 +1,144 @@
 @import "tailwindcss";
+
+/* ================= HERO ANIMATION ================= */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-image {
+  animation: heroZoom 1.6s ease-out forwards;
+}
+
+.hero-eyebrow {
+  opacity: 0;
+  animation: heroFadeUp 0.7s ease forwards;
+}
+
+.hero-title {
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease 0.15s forwards;
+}
+
+.hero-description {
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease 0.35s forwards;
+}
+
+/* ================= PREMIUM CARD ================= */
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(59,130,246,.22),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #081F5C 0%,
+      #0d2d75 100%
+    );
+
+  opacity: 0;
+  transition: opacity .45s ease;
+}
+
+.premium-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: #2563EB;
+  transition: width .45s ease;
+}
+
+.premium-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.premium-card h1,
+.premium-card h2,
+.premium-card h3,
+.premium-card h4,
+.premium-card p,
+.premium-card li,
+.premium-card span,
+.premium-card button,
+.premium-card svg {
+  transition: all .4s ease;
+}
+
+/* ================= HOVER ================= */
+
+.premium-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  border-color: #2563EB;
+  box-shadow:
+    0 30px 60px rgba(8,31,92,.28),
+    0 0 30px rgba(37,99,235,.15);
+}
+
+.premium-card:hover::before {
+  opacity: 1;
+}
+
+.premium-card:hover::after {
+  width: 10px;
+}
+
+.premium-card:hover h1,
+.premium-card:hover h2,
+.premium-card:hover h3,
+.premium-card:hover h4 {
+  color: white;
+}
+
+.premium-card:hover p,
+.premium-card:hover li,
+.premium-card:hover span {
+  color: rgb(219 234 254);
+}
+
+.premium-card:hover button {
+  color: white;
+}
+
+.premium-card:hover svg {
+  color: white;
+}

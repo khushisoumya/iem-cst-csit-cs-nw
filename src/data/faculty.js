@@ -4,23 +4,23 @@ const faculty = [
     designation: "Professor",
   },
   {
-    name: "Dr. Pradip Neur",
+    name: "Dr. Chirodeep Sarkar",
     designation: "Associate Professor",
   },
   {
-    name: "Dr. Pradip Neur",
+    name: "Dr. Kiran Chakraborty",
     designation: "Assistant Professor",
   },
   {
-    name: "Dr. Pradip Neur",
+    name: "Dr. Kartik Kumar",
     designation: "Assistant Professor",
   },
   {
-    name: "Dr. Pradip Neur",
+    name: "Dr. Aritri Ray",
     designation: "Associate Professor",
   },
   {
-    name: "Dr. Pradip Neur",
+    name: "Dr. Gaur Gopal",
     designation: "Professor",
   },
 ];

@@ -8,7 +8,7 @@ function Home() {
     <>
       <PageHero
         eyebrow="Department of"
-        titleClassName="text-[40px] xl:text-[44px]"
+        titleClassName="lg:text-[40px] xl:text-[44px]"
         title={
           <>
             Computer Science &
