@@ -1,7 +1,18 @@
 
 
+
 import { useState } from "react";
 import EventCard from "./EventCard";
+
+// TODO: import your actual event images and add them to each object below, e.g.:
+// import event1 from "../../assets/images/event1.jpg";
+
+import event1 from "../../assets/bsh19.webp"
+import event2 from "../../assets/bsh20.jpg"
+import event3 from "../../assets/bsh21.jpg"
+import event4 from "../../assets/bsh27.jpeg"
+import event5 from "../../assets/bsh24.jpg"
+import event6 from "../../assets/bsh26.jpg"
 
 const eventData = {
   2023: [
@@ -10,38 +21,36 @@ const eventData = {
       day: "18",
       title: "AI Awareness Seminar",
       subtitle: "February 18, 2023 | Seminar Hall",
-      description:
-        "An introductory seminar on Artificial Intelligence and emerging technologies.",
+      description: "An introductory seminar on Artificial Intelligence and emerging technologies.",
+      image: event1,
     },
     {
       month: "SEP",
       day: "12",
       title: "Tech Fest 2023",
       subtitle: "September 12, 2023",
-      description:
-        "Department-level technical festival with coding, robotics and quiz competitions.",
+      description: "Department-level technical festival with coding, robotics and quiz competitions.",
+      image: event2,
     },
   ],
-
   2024: [
     {
       month: "JAN",
       day: "22",
       title: "Python Bootcamp",
       subtitle: "January 22, 2024 | Offline",
-      description:
-        "Hands-on bootcamp covering Python programming fundamentals and projects.",
+      description: "Hands-on bootcamp covering Python programming fundamentals and projects.",
+      image: event3,
     },
     {
       month: "NOV",
       day: "08",
       title: "Cyber Security Workshop",
       subtitle: "November 8, 2024",
-      description:
-        "Workshop introducing ethical hacking, network security and cyber awareness.",
+      description: "Workshop introducing ethical hacking, network security and cyber awareness.",
+      image: event4,
     },
   ],
-
   2025: [
     {
       month: "JUN",
@@ -49,22 +58,23 @@ const eventData = {
       title: "Even Semester",
       subtitle: "January – June 2025",
       description: "",
+      image: event5,
     },
     {
       month: "APR",
       day: "05",
       title: "Goal Extraction Challenge",
       subtitle: "9:00 AM – 5:00 PM | IEM UEM",
-      description:
-        "Open innovation event to develop creative, strong connected and long lasting ideas.",
+      description: "Open innovation event to develop creative, strong connected and long lasting ideas.",
+      image: event6,
     },
     {
       month: "MAR",
       day: "25",
       title: "Blockchain Technology Workshop",
       subtitle: "March 25, 2025 | Offline",
-      description:
-        "Hands-on workshop covering blockchain fundamentals, smart contracts and decentralized applications.",
+      description: "Hands-on workshop covering blockchain fundamentals, smart contracts and decentralized applications.",
+      image: event1,
     },
     {
       month: "JUL",
@@ -72,14 +82,15 @@ const eventData = {
       title: "Odd Semester",
       subtitle: "July – December 2025",
       description: "",
+      image: event2,
     },
     {
       month: "AUG",
       day: "10",
       title: "Coding Nexus",
       subtitle: "10:00 AM",
-      description:
-        "Sharpen your coding skills in this timed competitive programming contest.",
+      description: "Sharpen your coding skills in this timed competitive programming contest.",
+      image: event3,
     },
   ],
 };
@@ -96,17 +107,16 @@ function EventTimeline() {
 
   return (
     <section className="py-20 bg-paper">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12">
-          <p className="font-mono uppercase tracking-[3px] text-[11px] text-signal mb-3">
+          <p className="font-mono uppercase tracking-[3px] text-[11px] text-ink mb-3">
             Timeline
           </p>
           <h2 className="font-display text-4xl font-semibold text-ink">
             Events {selectedYear !== "All" ? selectedYear : ""}
           </h2>
           <p className="mt-3 text-body font-sans">
-            Explore academic and extracurricular events organized by the
-            department.
+            Explore academic and extracurricular events organized by the department.
           </p>
 
           <div className="flex gap-6 mt-8 border-b border-line">
@@ -116,7 +126,7 @@ function EventTimeline() {
                 onClick={() => setSelectedYear(year)}
                 className={`pb-3 font-sans text-sm font-semibold transition-colors duration-300 border-b-2 -mb-px ${
                   selectedYear === year
-                    ? "text-ink border-signal"
+                    ? "text-ink border-ink"
                     : "text-body border-transparent hover:text-ink"
                 }`}
               >
@@ -126,7 +136,7 @@ function EventTimeline() {
           </div>
         </div>
 
-        <div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event, index) => (
             <EventCard key={index} {...event} />
           ))}

@@ -1,37 +1,49 @@
-import { ArrowRight } from "lucide-react";
 
-export default function EventCard({
-  month,
-  day,
-  title,
-  subtitle,
-  description,
-}) {
+
+import { Clock, ArrowRight } from "lucide-react";
+
+export default function EventCard({ month, day, title, subtitle, description, image }) {
   return (
-    <div className="group relative pl-8 pb-10 border-l border-line last:border-transparent last:pb-0">
-      <span className="absolute -left-[7px] top-1 h-3.5 w-3.5 rounded-full bg-white border-2 border-signal transition-colors duration-300 group-hover:bg-signal" />
+    <div className="group bg-white rounded-2xl border border-line overflow-hidden shadow-[0_10px_30px_rgba(8,31,92,0.06)] hover:shadow-[0_20px_40px_rgba(8,31,92,0.14)] transition-all duration-300 hover:-translate-y-1">
+      <div className="relative h-44 bg-ink/5">
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-ink/20 font-display text-3xl">
+            {month} {day}
+          </div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
 
-      <span className="font-mono text-xs uppercase tracking-[2px] text-signal">
-        {month} {day}
-      </span>
+        <div className="absolute top-3 left-3 bg-white/95 rounded-lg w-12 h-12 flex flex-col items-center justify-center">
+          <span className="text-ink text-[10px] font-semibold font-mono">{month}</span>
+          <span className="text-ink text-base font-bold leading-none">{day}</span>
+        </div>
 
-      <h3 className="mt-2 font-display text-xl font-semibold text-ink">
-        {title}
-      </h3>
+        <h3 className="absolute bottom-3 left-4 right-4 text-white font-display font-semibold text-base leading-snug">
+          {title}
+        </h3>
+      </div>
 
-      <p className="text-sm text-body font-sans mt-1">{subtitle}</p>
+      <div className="p-6 pt-4">
+        <span className="flex items-center gap-2 text-body text-xs mb-3">
+          <Clock className="w-3.5 h-3.5 shrink-0" strokeWidth={2} />
+          {subtitle}
+        </span>
 
-      {description && (
-        <p className="mt-3 text-body leading-7 font-sans">{description}</p>
-      )}
+        {description && (
+          <p className="text-body text-sm leading-relaxed">{description}</p>
+        )}
 
-      <button className="mt-4 text-signal font-sans font-semibold text-sm flex items-center gap-2 transition-all duration-300 hover:gap-3">
-        Learn More
-        <ArrowRight
-          size={16}
-          className="transition-transform duration-300 group-hover:translate-x-1"
-        />
-      </button>
+        <button className="mt-4 text-ink font-sans font-semibold text-sm flex items-center gap-2 transition-all duration-300 hover:gap-3">
+          Learn More
+          <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+        </button>
+      </div>
     </div>
   );
 }
