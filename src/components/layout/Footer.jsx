@@ -25,7 +25,7 @@ const socials = [
 
 function Footer() {
   return (
-    <footer className="bg-ink text-white mt-20">
+    <footer className="bg-ink text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div className="text-center md:text-left">
           <h2 className="font-display text-2xl font-semibold mb-4">
