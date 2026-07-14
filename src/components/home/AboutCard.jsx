@@ -4,7 +4,7 @@ import aboutImage from "../../assets/images/building2.png";
 
 function AboutCard() {
   return (
-    <section className="bg-paper py-20">
+    <section className="bg-paper pt-20 pb-10">
       <div className="max-w-5xl mx-auto px-6">
         <div className="group relative overflow-hidden rounded-2xl bg-white border border-line shadow-[0_10px_30px_rgba(8,31,92,0.08)] hover:shadow-[0_25px_50px_rgba(8,31,92,0.16)] transition-shadow duration-500">
           <div className="h-1.5 w-full bg-ink" />
