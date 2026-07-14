@@ -21,7 +21,7 @@ function FacultyGrid() {
           {faculty.map((item, index) => (
             <li
               key={`${item.name}-${index}`}
-              className="group flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 py-5 px-2 hover:pl-4 transition-all duration-300 border-l-2 border-transparent hover:border-signal"
+              className="group flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 py-5 px-2 hover:pl-4 transition-all duration-300 border-l-2 border-transparent hover:border-signal/50"
             >
               <span className="font-mono text-sm text-body w-8 flex-shrink-0">
                 {String(index + 1).padStart(2, "0")}

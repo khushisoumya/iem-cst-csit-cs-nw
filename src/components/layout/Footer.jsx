@@ -69,7 +69,7 @@ function Footer() {
                 key={label}
                 href="#"
                 aria-label={label}
-                className="p-2 rounded-full bg-white/10 hover:bg-signal transition duration-300"
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 hover:text-blue-200 transition duration-300"
               >
                 <Icon size={18} />
               </a>
