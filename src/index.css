@@ -159,3 +159,40 @@ body {
 .premium-card:hover svg {
   color: white;
 }
+
+/* ================= EDGE CARD (restrained hover) ================= */
+
+.edge-card {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.edge-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--color-signal);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .35s ease;
+}
+
+.edge-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-signal);
+  box-shadow: 0 20px 40px rgba(8,31,92,.12);
+}
+
+.edge-card:hover::before {
+  transform: scaleY(1);
+}
