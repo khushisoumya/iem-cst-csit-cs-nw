@@ -1,7 +1,5 @@
 
 
-
-
 import { useState } from "react";
 import EventCard from "./EventCard";
 
@@ -91,38 +89,35 @@ function EventTimeline() {
 
   const events =
     selectedYear === "All"
-      ? [
-          ...eventData["2023"],
-          ...eventData["2024"],
-          ...eventData["2025"],
-        ]
+      ? [...eventData["2023"], ...eventData["2024"], ...eventData["2025"]]
       : eventData[selectedYear];
 
   const years = ["2023", "2024", "2025", "All"];
 
   return (
-    <section className="py-20 bg-[#f8fafc]">
-      <div className="max-w-5xl mx-auto px-6">
-
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-[#081F5C]">
+    <section className="py-20 bg-paper">
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="mb-12">
+          <p className="font-mono uppercase tracking-[3px] text-[11px] text-signal mb-3">
+            Timeline
+          </p>
+          <h2 className="font-display text-4xl font-semibold text-ink">
             Events {selectedYear !== "All" ? selectedYear : ""}
           </h2>
-
-          <p className="mt-3 text-gray-500">
+          <p className="mt-3 text-body font-sans">
             Explore academic and extracurricular events organized by the
             department.
           </p>
 
-          <div className="flex justify-center gap-3 mt-8">
+          <div className="flex gap-6 mt-8 border-b border-line">
             {years.map((year) => (
               <button
                 key={year}
                 onClick={() => setSelectedYear(year)}
-                className={`px-4 py-2 rounded transition ${
+                className={`pb-3 font-sans text-sm font-semibold transition-colors duration-300 border-b-2 -mb-px ${
                   selectedYear === year
-                    ? "bg-[#2563EB] text-white"
-                    : "bg-gray-100 hover:bg-gray-200"
+                    ? "text-ink border-signal"
+                    : "text-body border-transparent hover:text-ink"
                 }`}
               >
                 {year}
@@ -131,12 +126,11 @@ function EventTimeline() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div>
           {events.map((event, index) => (
             <EventCard key={index} {...event} />
           ))}
         </div>
-
       </div>
     </section>
   );
