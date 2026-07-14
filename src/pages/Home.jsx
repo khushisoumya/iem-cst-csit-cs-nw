@@ -1,12 +1,12 @@
 import Hero from "../components/home/Hero";
-import StatStrip from "../components/home/StatStrip";
 import HODCard from "../components/home/HODCard";
+import AboutCard from "../components/home/AboutCard";
 
 function Home() {
   return (
     <>
       <Hero />
-      <StatStrip />
+      <AboutCard />
       <HODCard />
     </>
   );
