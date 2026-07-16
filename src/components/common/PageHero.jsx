@@ -1,53 +1,33 @@
 import buildingImg from "../../assets/images/building2.png";
-import CornerFrame from "./CornerFrame";
 
-function PageHero({
-  eyebrow,
-  title,
-  description,
-  image = buildingImg,
-  titleClassName = "",
-}) {
+function PageHero({ eyebrow, title, description, image = buildingImg }) {
   return (
-    <section className="relative h-[320px] md:h-[380px] lg:h-[430px] overflow-hidden bg-navy">
+    <section className="relative min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] flex items-center overflow-hidden">
       <img
         src={image}
         alt={typeof title === "string" ? title : "Hero"}
-        className="hero-image absolute inset-0 w-full h-full object-cover object-right"
+        className="hero-image-in absolute inset-0 w-full h-full object-cover"
       />
+      <div className="absolute inset-0 bg-navy/80" />
 
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(90deg,#081F5C 0%,#081F5C 34%,rgba(8,31,92,.86) 46%,rgba(8,31,92,.56) 60%,rgba(8,31,92,.22) 74%,transparent 88%)",
-        }}
-      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16 w-full">
+        {eyebrow && (
+          <span className="hero-enter inline-block bg-white/10 text-white text-[11px] sm:text-xs font-medium px-3 py-1.5 rounded-full mb-5 sm:mb-6 border border-white/20">
+            {eyebrow}
+          </span>
+        )}
 
-      <CornerFrame />
+        <h1 className="hero-enter hero-enter-delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-2xl">
+          {title}
+        </h1>
 
-      <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-10 lg:px-16">
-          {eyebrow && (
-            <p className="hero-eyebrow uppercase tracking-[4px] md:tracking-[6px] text-[10px] md:text-[11px] text-blue-200 mb-3 md:mb-5">
-              {eyebrow}
-            </p>
-          )}
+        <div className="hero-enter hero-enter-delay-2 w-12 sm:w-14 h-1 bg-yellow-400 rounded-full my-4 sm:my-5" />
 
-          <h1
-            className={`hero-title font-semibold text-white leading-[1.08] tracking-[-0.01em] max-w-full md:max-w-[680px] break-words text-[32px] sm:text-[38px] md:text-[44px] ${
-              titleClassName || "lg:text-[52px]"
-            }`}
-          >
-            {title}
-          </h1>
-
-          {description && (
-            <p className="hero-description mt-4 md:mt-5 max-w-full md:max-w-[520px] text-[15px] md:text-[17px] leading-7 text-gray-200">
-              {description}
-            </p>
-          )}
-        </div>
+        {description && (
+          <p className="hero-enter hero-enter-delay-3 text-sm sm:text-base text-gray-300 max-w-xl leading-relaxed">
+            {description}
+          </p>
+        )}
       </div>
     </section>
   );

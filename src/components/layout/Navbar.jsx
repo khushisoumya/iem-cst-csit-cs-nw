@@ -6,6 +6,7 @@ import logo from "../../assets/iem.png";
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About the Department" },
+  { to: "/programmes", label: "Programmes" },
   { to: "/faculty", label: "Faculty" },
   { to: "/events", label: "Events" },
   { to: "/contact", label: "Contact" },
@@ -45,6 +46,16 @@ function Navbar() {
             </NavLink>
           ))}
         </nav>
+<a
+        
+          href="https://exam.iem.edu.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden lg:flex items-center gap-1.5 bg-brand-blue hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-md text-white text-sm font-medium px-3.5 xl:px-4 py-2.5 rounded-md transition-all duration-200"
+        >
+          Admissions Open
+          <span className="text-base leading-none">→</span>
+        </a>
 
         <button
           type="button"
@@ -76,6 +87,15 @@ function Navbar() {
                 {link.label}
               </NavLink>
             ))}
+            <a
+              href="https://exam.iem.edu.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-brand-blue px-4 py-3 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-md"
+            >
+              Admissions Open
+              <span className="text-base leading-none">→</span>
+            </a>
           </nav>
         </div>
       )}

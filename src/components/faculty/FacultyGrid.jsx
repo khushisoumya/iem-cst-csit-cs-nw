@@ -1,40 +1,49 @@
+import { Mail, User, GraduationCap, FileText, ArrowRight } from "lucide-react";
 import faculty from "../../data/faculty";
 
 function FacultyGrid() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="mb-12">
-          <p className="uppercase tracking-[3px] text-[11px] text-brand-blue mb-3">
-            {faculty.length} Members
-          </p>
-          <h2 className="text-4xl font-semibold text-navy">
-            Faculty
-          </h2>
-          <p className="mt-3 text-gray-500">
-            Meet the dedicated educators driving excellence in our
-            department.
-          </p>
-        </div>
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-14 lg:pb-16">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {faculty.map((member) => (
+          <div
+            key={member.name}
+            className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <img src={member.photo} alt={member.name} className="w-full h-56 object-cover" />
+            <div className="p-5">
+              <h3 className="text-navy font-bold text-base">{member.name}</h3>
+              <p className="text-brand-blue text-sm font-medium mt-0.5">{member.designation}</p>
 
-        <ol className="divide-y divide-gray-200 border-t border-b border-gray-200">
-          {faculty.map((item, index) => (
-            <li
-              key={`${item.name}-${index}`}
-              className="group flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 py-5 px-2 hover:pl-4 transition-all duration-300 border-l-2 border-transparent hover:border-signal/50"
-            >
-              <span className="text-sm text-gray-500 w-8 flex-shrink-0">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="text-lg text-navy flex-1">
-                {item.name}
-              </span>
-              <span className="text-xs uppercase tracking-[1.5px] text-gray-500">
-                {item.designation}
-              </span>
-            </li>
-          ))}
-        </ol>
+              <div className="flex flex-wrap gap-x-2 gap-y-1 mt-3 text-gray-500 text-xs">
+                {member.tags.map((tag, i) => (
+                  <span key={tag} className="flex items-center gap-2">
+                    {tag}
+                    {i < member.tags.length - 1 && <span className="text-gray-300">|</span>}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-2 mt-4">
+                {[Mail, User, GraduationCap, FileText].map((Icon, i) => (
+                  <button
+                    key={i}
+                    className="w-9 h-9 rounded-lg bg-gray-50 hover:bg-gray-100 flex items-center justify-center transition-colors"
+                    aria-label="Faculty action"
+                  >
+                    <Icon className="w-4 h-4 text-gray-500" strokeWidth={2} />
+                  </button>
+                ))}
+                <button
+                  className="w-9 h-9 rounded-lg bg-navy hover:bg-navy-light flex items-center justify-center transition-colors ml-auto"
+                  aria-label="View profile"
+                >
+                  <ArrowRight className="w-4 h-4 text-white" strokeWidth={2} />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
