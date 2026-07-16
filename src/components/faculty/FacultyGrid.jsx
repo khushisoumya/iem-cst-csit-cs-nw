@@ -1,6 +1,8 @@
 import { Mail, User, GraduationCap, FileText, ArrowRight } from "lucide-react";
 import faculty from "../../data/faculty";
 
+
+
 function FacultyGrid() {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-14 lg:pb-16">
@@ -10,7 +12,7 @@ function FacultyGrid() {
             key={member.name}
             className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow"
           >
-            <img src={member.photo} alt={member.name} className="w-full h-56 object-cover" />
+            <img src={member.photo} alt={member.name} className="w-full h-80 object-cover" />
             <div className="p-5">
               <h3 className="text-navy font-bold text-base">{member.name}</h3>
               <p className="text-brand-blue text-sm font-medium mt-0.5">{member.designation}</p>

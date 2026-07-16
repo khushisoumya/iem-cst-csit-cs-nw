@@ -2,6 +2,12 @@ import { ArrowRight, Download } from "lucide-react";
 import PageHero from "../components/common/PageHero";
 import building from "../assets/building2.png";
 
+import p1 from "../assets/mca8.jpg"
+import p2 from "../assets/mca1.webp"
+import p3 from "../assets/bsh27.jpeg"
+import p4 from "../assets/mca7.avif"
+
+
 const programs = [
   {
     code: "CS-CYS",
@@ -12,7 +18,7 @@ const programs = [
     duration: "4 Years · 8 Semesters",
     degree: "B.Tech, Honours",
     mode: "Full-time, on-campus",
-    image: building,
+    image: p1,
   },
   {
     code: "CS-NET",
@@ -23,7 +29,7 @@ const programs = [
     duration: "4 Years · 8 Semesters",
     degree: "B.Tech, Honours",
     mode: "Full-time, on-campus",
-    image: building,
+    image: p2,
   },
   {
     code: "CS-TECH",
@@ -34,7 +40,7 @@ const programs = [
     duration: "4 Years · 8 Semesters",
     degree: "B.Tech",
     mode: "Full-time, on-campus",
-    image: building,
+    image: p3,
   },
   {
     code: "CSIT",
@@ -45,7 +51,7 @@ const programs = [
     duration: "4 Years · 8 Semesters",
     degree: "B.Tech, Honours",
     mode: "Full-time, on-campus",
-    image: building,
+    image: p4,
   },
 ];
 

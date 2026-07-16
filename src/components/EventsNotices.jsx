@@ -2,6 +2,9 @@ import { MapPin, Clock, ArrowRight, ChevronRight, Bell } from "lucide-react";
 import { Link } from "react-router-dom";
 import building from "../assets/images/building2.png";
 
+import event1 from "../assets/bsh19.webp"
+import event2 from "../assets/bsh24.jpg"
+
 const events = [
   {
     month: "AUG", day: "15",
@@ -9,7 +12,7 @@ const events = [
     subtitle: "Flag hoisting & cultural performances",
     location: "Main Auditorium",
     time: "09:00 AM Onwards",
-    image: building,
+    image: event1,
   },
   {
     month: "SEP", day: "05",
@@ -17,7 +20,7 @@ const events = [
     subtitle: "Workshops, CTFs and guest talks",
     location: "Seminar Hall",
     time: "10:00 AM Onwards",
-    image: building,
+    image: event2,
   },
 ];
 

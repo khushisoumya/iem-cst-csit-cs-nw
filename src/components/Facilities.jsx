@@ -1,10 +1,15 @@
 import building from "../assets/images/building2.png";
 
+import mca1 from "../assets/mca1.webp";
+import mca2 from "../assets/mca6.jpg";
+import mca3 from "../assets/mca4.png";
+import mca4 from "../assets/mca5.jpg";
+
 const facilities = [
-  { name: "Security Labs", image: building },
-  { name: "Computer Labs", image: building },
-  { name: "Network Labs", image: building },
-  { name: "Digital Library", image: building },
+  { name: "Security Labs", image: mca1 },
+  { name: "Computer Labs", image: mca2 },
+  { name: "Network Labs", image: mca3 },
+  { name: "Digital Library", image: mca4 },
 ];
 
 function Facilities() {

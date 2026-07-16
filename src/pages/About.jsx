@@ -1,19 +1,19 @@
-// import PageBanner from "../components/layout/PageBanner";
 import PageHero from "../components/common/PageHero";
-import AboutContent from "../components/about/AboutContent";
-
-import bannerImage from "../assets/images/building2.png";
+import AboutIntro from "../components/about/AboutIntro";
+import HODMessage from "../components/about/HODMessage";
+import MissionVisionOutcomes from "../components/about/MissionVisionOutcomes";
 
 function About() {
   return (
     <>
-      
-        <PageHero
+      <PageHero
+        badge="About Us"
         title="About the Department"
-        description="Learn about our vision, mission, academic excellence and commitment to innovation."
+        subtitle="Learn about our vision, mission, academic excellence and commitment to innovation."
       />
-
-      <AboutContent />
+      <AboutIntro />
+      <HODMessage />
+      <MissionVisionOutcomes />
     </>
   );
 }
