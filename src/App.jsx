@@ -10,10 +10,13 @@ import Programmes from "./pages/Programmes";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
 
         <Routes>
