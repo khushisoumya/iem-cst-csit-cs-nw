@@ -1,6 +1,6 @@
-# IEM CS Department Website
+# IEM CST CSIT CS CS(NW) Departmental Website
 
-A modern, responsive website for the Department of Cyber Security, Institute of Engineering & Management (IEM), Kolkata.
+A modern, responsive website for the Department of Cyber Security, Computer Science Technology, Computer Science Information Technology, Computer Science (Network), Institute of Engineering & Management (IEM), Kolkata.
 
 ## Features
 
