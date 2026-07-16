@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "../../assets/iem.png";
 
@@ -12,51 +12,53 @@ const links = [
 ];
 
 function Navbar() {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname]);
+
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto h-20 px-4 sm:px-6 flex items-center justify-between">
-        <NavLink to="/" onClick={closeMenu}>
-          <img
-            src={logo}
-            alt="IEM Logo"
-            className="h-12 sm:h-14 w-auto object-contain"
-          />
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-3">
+        <NavLink to="/" onClick={closeMenu} className="flex items-center gap-2.5">
+          <img src={logo} alt="IEM Logo" className="h-10 sm:h-12 w-auto object-contain" />
         </NavLink>
 
-        <div className="hidden lg:flex items-center gap-8 text-sm font-sans font-semibold">
+        <nav className="hidden lg:flex items-center gap-1">
           {links.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               end={link.to === "/"}
               className={({ isActive }) =>
-                `relative pb-1 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:bg-signal after:transition-all after:duration-300 ${
+                `px-3.5 py-2 rounded-md text-sm font-medium transition-colors ${
                   isActive
-                    ? "text-ink after:w-full"
-                    : "text-gray-600 hover:text-ink after:w-0"
+                    ? "bg-blue-50 text-brand-blue"
+                    : "text-gray-600 hover:text-navy hover:bg-gray-50"
                 }`
               }
             >
               {link.label}
             </NavLink>
           ))}
-        </div>
+        </nav>
 
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden text-ink"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          type="button"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="inline-flex lg:hidden items-center justify-center rounded-md border border-gray-200 p-2 text-navy transition-colors hover:bg-gray-50"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
         >
-          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+          {menuOpen ? <X className="h-5 w-5" strokeWidth={2} /> : <Menu className="h-5 w-5" strokeWidth={2} />}
         </button>
       </div>
 
       {menuOpen && (
-        <div className="lg:hidden bg-ink border-t border-white/10">
-          <div className="flex flex-col py-4 font-sans">
+        <div className="lg:hidden border-t border-gray-100 bg-white">
+          <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-2">
             {links.map((link) => (
               <NavLink
                 key={link.to}
@@ -64,20 +66,20 @@ function Navbar() {
                 end={link.to === "/"}
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `px-6 py-3 transition-colors duration-300 border-l-2 ${
+                  `rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-white bg-white/10 border-signal"
-                      : "text-gray-200 border-transparent hover:bg-white/10"
+                      ? "bg-blue-50 text-brand-blue"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-navy"
                   }`
                 }
               >
                 {link.label}
               </NavLink>
             ))}
-          </div>
+          </nav>
         </div>
       )}
-    </nav>
+    </header>
   );
 }
 

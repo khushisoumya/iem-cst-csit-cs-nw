@@ -33,13 +33,13 @@ const details = [
 
 function ContactSection() {
   return (
-    <section className="py-20 bg-paper">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-14">
-          <p className="font-mono uppercase tracking-[3px] text-[11px] text-ink mb-3">
+          <p className="uppercase tracking-[3px] text-[11px] text-navy mb-3">
             Get in Touch
           </p>
-          <h2 className="font-display text-4xl font-semibold text-ink">
+          <h2 className="text-4xl font-semibold text-navy">
             Contact Us
           </h2>
         </div>
@@ -49,12 +49,12 @@ function ContactSection() {
           <div className="grid sm:grid-cols-3 gap-8">
             {details.map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex items-start gap-4">
-                <Icon className="text-ink flex-shrink-0 mt-1" size={22} />
+                <Icon className="text-navy flex-shrink-0 mt-1" size={22} />
                 <div>
-                  <h3 className="font-mono uppercase tracking-[1.5px] text-xs text-body">
+                  <h3 className="uppercase tracking-[1.5px] text-xs text-gray-500">
                     {label}
                   </h3>
-                  <p className="mt-1.5 font-sans text-ink leading-7">{value}</p>
+                  <p className="mt-1.5 text-navy leading-7">{value}</p>
                 </div>
               </div>
             ))}
@@ -64,7 +64,7 @@ function ContactSection() {
             href="https://www.google.com/maps/place/Institute+of+Engineering+%26+Management,+New+Town/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center mt-8 bg-ink text-white px-6 py-3 rounded-lg font-sans font-semibold transition-all duration-300 hover:bg-ink/90"
+            className="inline-flex items-center justify-center mt-8 bg-navy text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-navy/90"
           >
             Open in Google Maps
           </a>

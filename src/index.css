@@ -1,198 +1,71 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #081F5C;
-  --color-signal: #2563EB;
-  --color-paper: #F8F7F2;
-  --color-body: #475569;
-  --color-line: #E2E5EA;
-
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  --color-navy: #0B1E3E;
+  --color-navy-light: #14294f;
+  --color-brand-blue: #2563eb;
 }
 
 body {
-  font-family: var(--font-sans);
-  color: var(--color-body);
+  color: #475569; /* gray-600 — matches new's body text convention, no custom var needed */
 }
 
-/* ================= HERO ANIMATION ================= */
+/* ================= HERO ANIMATION (ported from MCA) ================= */
 
-@keyframes heroFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes heroZoom {
-  from {
-    transform: scale(1.08);
-  }
-  to {
-    transform: scale(1);
-  }
+.hero-enter {
+  animation: hero-enter 0.6s ease-out both;
+}
+.hero-enter-delay-1 { animation-delay: 0.1s; }
+.hero-enter-delay-2 { animation-delay: 0.2s; }
+.hero-enter-delay-3 { animation-delay: 0.3s; }
+.hero-enter-delay-4 { animation-delay: 0.4s; }
+
+.hero-image-in {
+  animation: hero-enter 0.8s ease-out both;
 }
 
-.hero-image {
-  animation: heroZoom 1.6s ease-out forwards;
-}
-
-.hero-eyebrow {
-  opacity: 0;
-  animation: heroFadeUp 0.7s ease forwards;
-}
-
-.hero-title {
-  opacity: 0;
-  animation: heroFadeUp 0.8s ease 0.15s forwards;
-}
-
-.hero-description {
-  opacity: 0;
-  animation: heroFadeUp 0.8s ease 0.35s forwards;
-}
-
-/* ================= PREMIUM CARD ================= */
+/* ================= PREMIUM CARD → restyled to new's card convention ================= */
 
 .premium-card {
   position: relative;
-  overflow: hidden;
   background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
+  border: 1px solid #f3f4f6; /* gray-100 */
+  border-radius: 16px; /* rounded-2xl */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* shadow-sm */
+  border-left: 4px solid transparent;
   transition:
-    transform .45s ease,
-    box-shadow .45s ease,
-    border-color .45s ease;
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
 }
-
-.premium-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(59,130,246,.14),
-      transparent 45%
-    ),
-    linear-gradient(
-      135deg,
-      rgba(8,31,92,.90) 0%,
-      rgba(13,45,117,.90) 100%
-    );
-
-  opacity: 0;
-  transition: opacity .45s ease;
-}
-
-.premium-card::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: rgba(37,99,235,.85);
-  transition: width .45s ease;
-}
-
-.premium-card > * {
-  position: relative;
-  z-index: 2;
-}
-
-.premium-card h1,
-.premium-card h2,
-.premium-card h3,
-.premium-card h4,
-.premium-card p,
-.premium-card li,
-.premium-card span,
-.premium-card button,
-.premium-card svg {
-  transition: all .4s ease;
-}
-
-/* ================= HOVER ================= */
 
 .premium-card:hover {
-  transform: translateY(-6px) scale(1.005);
-  border-color: rgba(37,99,235,.6);
-  box-shadow:
-    0 20px 40px rgba(8,31,92,.16),
-    0 0 20px rgba(37,99,235,.08);
+  transform: translateY(-2px);
+  border-left-color: var(--color-brand-blue);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* shadow-lg */
 }
 
-.premium-card:hover::before {
-  opacity: 0.94;
-}
-
-.premium-card:hover::after {
-  width: 7px;
-}
-
-.premium-card:hover h1,
-.premium-card:hover h2,
-.premium-card:hover h3,
-.premium-card:hover h4 {
-  color: rgb(241 245 249);
-}
-
-.premium-card:hover p,
-.premium-card:hover li,
-.premium-card:hover span {
-  color: rgb(203 213 225);
-}
-
-.premium-card:hover button {
-  color: white;
-}
-
-.premium-card:hover svg {
-  color: white;
-}
-
-/* ================= EDGE CARD (restrained hover) ================= */
+/* ================= EDGE CARD → same restrained pattern, thinner accent ================= */
 
 .edge-card {
   position: relative;
-  overflow: hidden;
   background: #fff;
-  border: 1px solid var(--color-line);
+  border: 1px solid #e5e7eb; /* gray-200 */
   border-radius: 12px;
+  border-left: 3px solid transparent;
   transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    border-color .35s ease;
-}
-
-.edge-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 3px;
-  height: 100%;
-  background: var(--color-signal);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform .35s ease;
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
 }
 
 .edge-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(37,99,235,.55);
-  box-shadow: 0 14px 28px rgba(8,31,92,.08);
-}
-
-.edge-card:hover::before {
-  transform: scaleY(1);
+  transform: translateY(-2px);
+  border-left-color: var(--color-brand-blue);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }

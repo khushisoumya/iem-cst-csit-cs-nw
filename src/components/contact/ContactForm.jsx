@@ -26,17 +26,17 @@ function ContactForm() {
 
   return (
     <div className="edge-card p-8 md:p-10">
-      <h3 className="font-display text-2xl font-semibold text-ink mb-2">
+      <h3 className="text-2xl font-semibold text-navy mb-2">
         Send a Message
       </h3>
-      <p className="text-body font-sans text-sm mb-8">
+      <p className="text-gray-500 text-sm mb-8">
         Have a question? Fill out the form and we'll get back to you.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
-            <label className="block font-mono uppercase tracking-[1.5px] text-xs text-body mb-2">
+            <label className="block uppercase tracking-[1.5px] text-xs text-gray-500 mb-2">
               Name
             </label>
             <input
@@ -46,12 +46,12 @@ function ContactForm() {
               onChange={handleChange}
               required
               placeholder="Your full name"
-              className="w-full px-4 py-3 rounded-lg border border-line font-sans text-ink placeholder:text-body/60 focus:outline-none focus:border-ink focus:ring-1 focus:ring-ink transition-colors duration-300"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 text-navy placeholder:text-gray-500/60 focus:outline-none focus:border-navy focus:ring-1 focus:ring-ink transition-colors duration-300"
             />
           </div>
 
           <div>
-            <label className="block font-mono uppercase tracking-[1.5px] text-xs text-body mb-2">
+            <label className="block uppercase tracking-[1.5px] text-xs text-gray-500 mb-2">
               Email
             </label>
             <input
@@ -61,13 +61,13 @@ function ContactForm() {
               onChange={handleChange}
               required
               placeholder="you@example.com"
-              className="w-full px-4 py-3 rounded-lg border border-line font-sans text-ink placeholder:text-body/60 focus:outline-none focus:border-ink focus:ring-1 focus:ring-ink transition-colors duration-300"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 text-navy placeholder:text-gray-500/60 focus:outline-none focus:border-navy focus:ring-1 focus:ring-ink transition-colors duration-300"
             />
           </div>
         </div>
 
         <div>
-          <label className="block font-mono uppercase tracking-[1.5px] text-xs text-body mb-2">
+          <label className="block uppercase tracking-[1.5px] text-xs text-gray-500 mb-2">
             Subject
           </label>
           <input
@@ -77,12 +77,12 @@ function ContactForm() {
             onChange={handleChange}
             required
             placeholder="What is this regarding?"
-            className="w-full px-4 py-3 rounded-lg border border-line font-sans text-ink placeholder:text-body/60 focus:outline-none focus:border-ink focus:ring-1 focus:ring-ink transition-colors duration-300"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 text-navy placeholder:text-gray-500/60 focus:outline-none focus:border-navy focus:ring-1 focus:ring-ink transition-colors duration-300"
           />
         </div>
 
         <div>
-          <label className="block font-mono uppercase tracking-[1.5px] text-xs text-body mb-2">
+          <label className="block uppercase tracking-[1.5px] text-xs text-gray-500 mb-2">
             Message
           </label>
           <textarea
@@ -92,13 +92,13 @@ function ContactForm() {
             required
             rows={5}
             placeholder="Write your message here..."
-            className="w-full px-4 py-3 rounded-lg border border-line font-sans text-ink placeholder:text-body/60 focus:outline-none focus:border-ink focus:ring-1 focus:ring-ink transition-colors duration-300 resize-none"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 text-navy placeholder:text-gray-500/60 focus:outline-none focus:border-navy focus:ring-1 focus:ring-ink transition-colors duration-300 resize-none"
           />
         </div>
 
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-2 bg-ink text-white px-6 py-3 rounded-lg font-sans font-semibold transition-all duration-300 hover:bg-ink/90 w-full sm:w-auto"
+          className="inline-flex items-center justify-center gap-2 bg-navy text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-navy/90 w-full sm:w-auto"
         >
           {submitted ? "Message Sent!" : "Send Message"}
           <Send size={16} />

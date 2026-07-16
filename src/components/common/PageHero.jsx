@@ -9,7 +9,7 @@ function PageHero({
   titleClassName = "",
 }) {
   return (
-    <section className="relative h-[320px] md:h-[380px] lg:h-[430px] overflow-hidden bg-ink">
+    <section className="relative h-[320px] md:h-[380px] lg:h-[430px] overflow-hidden bg-navy">
       <img
         src={image}
         alt={typeof title === "string" ? title : "Hero"}
@@ -29,13 +29,13 @@ function PageHero({
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-10 lg:px-16">
           {eyebrow && (
-            <p className="hero-eyebrow font-mono uppercase tracking-[4px] md:tracking-[6px] text-[10px] md:text-[11px] text-blue-200 mb-3 md:mb-5">
+            <p className="hero-eyebrow uppercase tracking-[4px] md:tracking-[6px] text-[10px] md:text-[11px] text-blue-200 mb-3 md:mb-5">
               {eyebrow}
             </p>
           )}
 
           <h1
-            className={`hero-title font-display font-semibold text-white leading-[1.08] tracking-[-0.01em] max-w-full md:max-w-[680px] break-words text-[32px] sm:text-[38px] md:text-[44px] ${
+            className={`hero-title font-semibold text-white leading-[1.08] tracking-[-0.01em] max-w-full md:max-w-[680px] break-words text-[32px] sm:text-[38px] md:text-[44px] ${
               titleClassName || "lg:text-[52px]"
             }`}
           >
@@ -43,7 +43,7 @@ function PageHero({
           </h1>
 
           {description && (
-            <p className="hero-description mt-4 md:mt-5 max-w-full md:max-w-[520px] text-[15px] md:text-[17px] leading-7 text-gray-200 font-sans">
+            <p className="hero-description mt-4 md:mt-5 max-w-full md:max-w-[520px] text-[15px] md:text-[17px] leading-7 text-gray-200">
               {description}
             </p>
           )}

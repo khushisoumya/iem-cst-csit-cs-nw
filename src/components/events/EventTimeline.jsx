@@ -106,28 +106,28 @@ function EventTimeline() {
   const years = ["2023", "2024", "2025", "All"];
 
   return (
-    <section className="py-20 bg-paper">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12">
-          <p className="font-mono uppercase tracking-[3px] text-[11px] text-ink mb-3">
+          <p className="uppercase tracking-[3px] text-[11px] text-navy mb-3">
             Timeline
           </p>
-          <h2 className="font-display text-4xl font-semibold text-ink">
+          <h2 className="text-4xl font-semibold text-navy">
             Events {selectedYear !== "All" ? selectedYear : ""}
           </h2>
-          <p className="mt-3 text-body font-sans">
+          <p className="mt-3 text-gray-500">
             Explore academic and extracurricular events organized by the department.
           </p>
 
-          <div className="flex gap-6 mt-8 border-b border-line">
+          <div className="flex gap-6 mt-8 border-b border-gray-200">
             {years.map((year) => (
               <button
                 key={year}
                 onClick={() => setSelectedYear(year)}
-                className={`pb-3 font-sans text-sm font-semibold transition-colors duration-300 border-b-2 -mb-px ${
+                className={`pb-3 text-sm font-semibold transition-colors duration-300 border-b-2 -mb-px ${
                   selectedYear === year
-                    ? "text-ink border-ink"
-                    : "text-body border-transparent hover:text-ink"
+                    ? "text-navy border-navy"
+                    : "text-gray-500 border-transparent hover:text-navy"
                 }`}
               >
                 {year}
