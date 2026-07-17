@@ -1,8 +1,8 @@
 import building from "../assets/images/building2.png";
 
-import mca1 from "../assets/mca1.webp";
+import mca1 from "../assets/mca3.jpg";
 import mca2 from "../assets/mca6.jpg";
-import mca3 from "../assets/mca4.png";
+import mca3 from "../assets/mca2.jpg";
 import mca4 from "../assets/mca5.jpg";
 
 const facilities = [
