@@ -2,8 +2,6 @@ import { ArrowRight, Download } from "lucide-react";
 import PageHero from "../components/common/PageHero";
 import building from "../assets/building2.png";
 
-import syllabus1 from "../assets/iem_syllabus_1.pdf";
-
 import p1 from "../assets/bsh27.jpeg"
 import p2 from "../assets/mca6.jpg"
 import p3 from "../assets/mca8.jpg"
@@ -21,7 +19,6 @@ const programs = [
     degree: "B.Tech, Honours",
     mode: "Full-time, on-campus",
     image: p1,
-    syllabus: syllabus1,
   },
   {
     code: "CS-NET",
@@ -33,7 +30,6 @@ const programs = [
     degree: "B.Tech, Honours",
     mode: "Full-time, on-campus",
     image: p2,
-    syllabus: syllabus1
   },
   {
     code: "CS-TECH",
@@ -45,7 +41,6 @@ const programs = [
     degree: "B.Tech",
     mode: "Full-time, on-campus",
     image: p3,
-    syllabus: syllabus1
   },
   {
     code: "CSIT",
@@ -57,7 +52,6 @@ const programs = [
     degree: "B.Tech, Honours",
     mode: "Full-time, on-campus",
     image: p4,
-    syllabus: syllabus1
   },
 ];
 
@@ -118,14 +112,13 @@ function ProgramRow({ program, reverse }) {
             Apply Now
             <ArrowRight className="w-4 h-4" strokeWidth={2} />
           </a>
-         <a href={program.syllabus}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-1.5 bg-white border border-gray-200 hover:bg-gray-50 text-navy text-sm font-medium px-5 py-3 rounded-full transition-colors duration-200"
->
-  <Download className="w-4 h-4" strokeWidth={2} />
-  Syllabus
-</a>
+          <a
+            href="#"
+            className="inline-flex items-center gap-1.5 bg-white border border-gray-200 hover:bg-gray-50 text-navy text-sm font-medium px-5 py-3 rounded-full transition-colors duration-200"
+          >
+            <Download className="w-4 h-4" strokeWidth={2} />
+            Syllabus
+          </a>
         </div>
       </div>
     </div>
